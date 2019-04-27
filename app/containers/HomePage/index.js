@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import {Word, WordList} from '../../components/word';
-import {Page} from '../../components/page';
+import {Page, Input} from '../../components/page';
 
 const ENTER_KEY = 13;
 
@@ -55,7 +55,8 @@ export default class HomePage extends Component {
   render() {
       return (
         <Page>
-          <input 
+          <h1>汉字笔顺</h1>
+          <Input 
             value={this.state.newLine}
             onKeyDown={this.handleNewLineKeyDown}
             onChange={this.handleChange}
