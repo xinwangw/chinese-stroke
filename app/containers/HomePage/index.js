@@ -5,37 +5,31 @@
  *
  */
 
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import {Word, WordList} from '../../components/word';
-import {Page, Input} from '../../components/page';
+import React, { Component } from 'react';
+import { WordList } from '../../components/word';
+import { Page, Input } from '../../components/page';
+import Button from '../../components/button/button';
 
 const ENTER_KEY = 13;
 
 export default class HomePage extends Component {
-  static propTypes = {
-    line: PropTypes.string
-  }
-
   constructor(props) {
     super(props);
     this.state = {
-      newLine: '', 
+      newLine: '',
       line: '',
-      print: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleNewLineKeyDown = this.handleNewLineKeyDown.bind(this);
+    this.confirm = this.confirm.bind(this);
   }
 
   static defaultProps = {
-    line: ''
-  }
+    line: '',
+  };
 
   handleChange(event) {
-    this.setState({newLine: event.target.value});
+    this.setState({ newLine: event.target.value });
   }
 
   handleNewLineKeyDown(event) {
@@ -45,24 +39,29 @@ export default class HomePage extends Component {
 
     event.preventDefault();
 
-    var val = this.state.newLine;
+    this.confirm();
+  }
+
+  confirm() {
+    const val = this.state.newLine;
 
     if (val) {
-      this.setState({newLine: '', line: val});
+      this.setState({ newLine: '', line: val });
     }
   }
 
   render() {
-      return (
-        <Page>
-          <h1>汉字笔顺</h1>
-          <Input 
-            value={this.state.newLine}
-            onKeyDown={this.handleNewLineKeyDown}
-            onChange={this.handleChange}
-          />
-          <WordList line={this.state.line}></WordList>
-        </Page>
+    return (
+      <Page>
+        <h1>汉字笔顺</h1>
+        <Input
+          value={this.state.newLine}
+          onKeyDown={this.handleNewLineKeyDown}
+          onChange={this.handleChange}
+        />
+        <Button onClick={this.confirm}>OK</Button>
+        <WordList line={this.state.line} strokeColor="#000" />
+      </Page>
     );
   }
 }
