@@ -67,6 +67,7 @@ export default class WordList extends Component {
         <ColorSelectorWrapper>
           <ColorSelector data="#777" onClick={e => this.setColor(e)} />
           <ColorSelector data="#000" onClick={e => this.setColor(e)} />
+          <ColorSelector data="#e74c3c" onClick={e => this.setColor(e)} />
         </ColorSelectorWrapper>
         {printButton}
         <WordListWrapper ref={this.wordlist}>{this.content}</WordListWrapper>
