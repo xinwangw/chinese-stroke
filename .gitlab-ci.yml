@@ -1,9 +1,21 @@
-image: ubuntu:18.04
-before_script:
-  - apt-get update -qy
-  - apt-get install -y lftp
-  - apt-get install nodejs
-build:
-  script:
-  - npm install
-  - npm run build
+image: node:latest
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+    script:
+      - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+testing_testing:
+  stage: test
+  script: npm test
