@@ -1,6 +1,7 @@
 image: node:latest
 
 before_script:
+  - apt-get update -qy
   - apt-get install -y lftp
 
 stages:
@@ -31,3 +32,6 @@ deploy:
   stage: deploy
   script:
     - lftp -e "open $FTP_ADDRESS; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ ./; bye"
+  only:
+    refs:
+      - master
