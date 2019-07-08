@@ -1,0 +1,7 @@
+image: ubuntu:18.04
+before_script:
+  - apt-get update -qy
+  - apt-get install -y lftp
+build:
+  script:
+  - npm run build
