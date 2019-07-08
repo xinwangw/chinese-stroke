@@ -1,9 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HomePage /> should render and match the snapshot 1`] = `
-<h1>
-  <span>
-    This is the HomePage container!
-  </span>
-</h1>
+<div
+  class="page__Page-sc-1azcnwm-0 jgZWAh"
+>
+  <h1>
+    汉字笔顺
+  </h1>
+  <input
+    class="page__Input-sc-1azcnwm-1 eFljxR"
+    value=""
+  />
+  <button
+    class="styledButton__StyledButton-estgcy-0 dRkKdJ"
+  >
+    OK
+  </button>
+  <button
+    class="styledButton__StyledButton-estgcy-0 dRkKdJ"
+  >
+    Play All
+  </button>
+  <div
+    class="colorSelector__ColorSelectorWrapper-m67bks-1 hxeibA"
+  >
+    <div
+      class="colorSelector__ColorSelector-m67bks-0 lflgRg"
+      data="#777"
+    />
+    <div
+      class="colorSelector__ColorSelector-m67bks-0 eHBgkg"
+      data="#000"
+    />
+    <div
+      class="colorSelector__ColorSelector-m67bks-0 gNWxHA"
+      data="#e74c3c"
+    />
+  </div>
+  
+  <div
+    class="wordWrapper__WordListWrapper-r44k9w-2 ldvBkH"
+  />
+</div>
 `;

@@ -10,9 +10,9 @@ const Page = styled.div`
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
-  color: ${props => props.inputColor || "palevioletred"};
+  color: ${props => props.inputColor || 'palevioletred'};
   background: papayawhip;
   border: none;
   border-radius: 3px;
 `;
-export {Page, Input};
+export { Page, Input };

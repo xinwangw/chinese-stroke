@@ -4,4 +4,4 @@ const StyledPinyin = styled.div`
   overflow: hidden;
 `;
 
-export {StyledPinyin};
+export { StyledPinyin };

@@ -8,7 +8,7 @@ const ColorSelector = styled.div`
   margin: 5px;
 `;
 const ColorSelectorWrapper = styled.div`
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 `;
-export {ColorSelector, ColorSelectorWrapper};
+export { ColorSelector, ColorSelectorWrapper };

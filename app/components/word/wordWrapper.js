@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledWord = styled.div`
-    overflow: hidden;
+  overflow: hidden;
 `;
 
 const WordWrapper = styled.div`
@@ -11,13 +11,12 @@ const WordWrapper = styled.div`
 `;
 
 const WordListWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
 `;
 
-
-export {WordWrapper, WordListWrapper, StyledWord};
+export { WordWrapper, WordListWrapper, StyledWord };
