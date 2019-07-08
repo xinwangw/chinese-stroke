@@ -2,6 +2,8 @@ image: ubuntu:18.04
 before_script:
   - apt-get update -qy
   - apt-get install -y lftp
+  - apt-get install nodejs
 build:
   script:
+  - npm install
   - npm run build
