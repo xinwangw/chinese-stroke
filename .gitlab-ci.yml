@@ -23,6 +23,11 @@ build:
   stage: build
   script:
     - npm run build
+  artifacts:
+    name: "$CI_COMMIT_REF_NAME"
+    paths:
+    - build/
+    expire_in: 1 week
 
 test:
   stage: test
