@@ -1,9 +1,13 @@
 image: node:latest
 
+before_script:
+  - apt-get install -y lftp
+
 stages:
   - install
   - build
   - test
+  - deploy
 
 cache:
   paths:
@@ -22,3 +26,8 @@ build:
 test:
   stage: test
   script: npm test
+
+deploy:
+  stage: deploy
+  script:
+    - lftp -e "open $FTP_ADDRESS; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ ./; bye"
