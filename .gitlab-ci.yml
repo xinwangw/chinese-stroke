@@ -33,6 +33,7 @@ deploy:
   stage: deploy
   script:
     - lftp -e "open $FTP_ADDRESS; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete build/ ./; bye"
+  when: manual
   only:
     refs:
       - master
