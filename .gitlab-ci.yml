@@ -1,8 +1,4 @@
-image: node:latest
-
-before_script:
-  - apt-get update -qy
-  - apt-get install -y lftp
+image: xinwangw/node-web-ci
 
 stages:
   - install
