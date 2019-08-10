@@ -1,4 +1,4 @@
-image: xinwangw/node-web-ci
+image: xinwangw/node-web-ci:latest
 
 stages:
   - install
