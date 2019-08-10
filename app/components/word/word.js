@@ -11,6 +11,7 @@ export default class Word extends Component {
     withPinyin: PropTypes.bool,
     strokeColor: PropTypes.string,
     lineColor: PropTypes.string,
+    playing: PropTypes.bool,
   };
 
   constructor(props) {
@@ -48,7 +49,7 @@ export default class Word extends Component {
   }
 
   componentDidUpdate() {
-    const { character, strokeColor } = this.props;
+    const { character, strokeColor, playing } = this.props;
     if (character === ' ') {
       if (this.writer) {
         this.writer.hideOutline();
@@ -66,6 +67,9 @@ export default class Word extends Component {
         delayBetweenLoops: 3000,
         strokeColor,
       });
+    }
+    if (playing) {
+      this.click();
     }
   }
 

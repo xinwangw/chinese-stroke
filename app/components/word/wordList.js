@@ -17,8 +17,9 @@ export default class WordList extends Component {
     this.content = [<Word />];
     this.setColor = this.setColor.bind(this);
     this.click = this.click.bind(this);
+    this.stop = this.stop.bind(this);
     this.wordlist = React.createRef();
-    this.state = { color: null };
+    this.state = { color: null, playing: false };
   }
 
   static defaultProps = {
@@ -27,9 +28,15 @@ export default class WordList extends Component {
 
   words = [];
 
+  stop() {
+    this.setState({
+      playing: false,
+    });
+  }
+
   click() {
-    this.content.forEach((item, index) => {
-      this.words[`item${index}`].click();
+    this.setState({
+      playing: true,
     });
   }
 
@@ -49,6 +56,7 @@ export default class WordList extends Component {
           key={item}
           character={item}
           strokeColor={this.state.color || strokeColor}
+          playing={this.state.playing}
         />
       ));
     const printButton =
@@ -64,6 +72,7 @@ export default class WordList extends Component {
     return (
       <Fragment>
         <Button onClick={this.click}>Play All</Button>
+        <Button onClick={this.stop}>Stop All</Button>
         <ColorSelectorWrapper>
           <ColorSelector data="#777" onClick={e => this.setColor(e)} />
           <ColorSelector data="#000" onClick={e => this.setColor(e)} />
