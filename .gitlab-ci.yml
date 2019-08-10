@@ -14,13 +14,12 @@ install:
   stage: install
   script:
     - rm -rf node_modules/
-    - apt-get install autoconf
-    - npm install
+    - yarn
 
 build:
   stage: build
   script:
-    - npm run build
+    - yarn run build
   artifacts:
     name: "$CI_COMMIT_REF_NAME"
     paths:
