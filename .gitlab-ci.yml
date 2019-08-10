@@ -13,6 +13,7 @@ cache:
 install:
   stage: install
   script:
+    - node -v
     - rm -rf node_modules/
     - yarn
 
