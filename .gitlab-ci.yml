@@ -14,6 +14,7 @@ install:
   stage: install
   script:
     - rm -rf node_modules/
+    - ls
     - npm install
 
 build:
