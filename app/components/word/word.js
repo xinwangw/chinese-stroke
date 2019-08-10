@@ -12,6 +12,7 @@ export default class Word extends Component {
     strokeColor: PropTypes.string,
     lineColor: PropTypes.string,
     playing: PropTypes.bool,
+    showPinyin: PropTypes.bool,
   };
 
   constructor(props) {
@@ -74,8 +75,12 @@ export default class Word extends Component {
   }
 
   render() {
-    const { withPinyin, lineColor } = this.props;
-    const pinyin = withPinyin ? <Pinyin lineColor={lineColor} /> : <Fragment />;
+    const { withPinyin, lineColor, character, showPinyin } = this.props;
+    const pinyin = withPinyin ? (
+      <Pinyin lineColor={lineColor} character={character} show={showPinyin} />
+    ) : (
+      <Fragment />
+    );
     return (
       <WordWrapper onClick={this.click}>
         <svg xmlns="http://www.w3.org/2000/svg" width="120" height="180">

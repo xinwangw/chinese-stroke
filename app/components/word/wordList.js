@@ -10,6 +10,7 @@ export default class WordList extends Component {
   static propTypes = {
     line: PropTypes.string,
     strokeColor: PropTypes.string,
+    showPinyin: PropTypes.bool,
   };
 
   constructor(props) {
@@ -48,7 +49,7 @@ export default class WordList extends Component {
   }
 
   render() {
-    const { line, strokeColor } = this.props;
+    const { line, strokeColor, showPinyin } = this.props;
     this.content = line
       .split('')
       .map(item => (
@@ -57,6 +58,7 @@ export default class WordList extends Component {
           character={item}
           strokeColor={this.state.color || strokeColor}
           playing={this.state.playing}
+          showPinyin={showPinyin}
         />
       ));
     const printButton =
@@ -73,6 +75,7 @@ export default class WordList extends Component {
       <Fragment>
         <Button onClick={this.click}>Play All</Button>
         <Button onClick={this.stop}>Stop All</Button>
+
         <ColorSelectorWrapper>
           <ColorSelector data="#777" onClick={e => this.setColor(e)} />
           <ColorSelector data="#000" onClick={e => this.setColor(e)} />
