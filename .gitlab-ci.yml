@@ -13,6 +13,7 @@ cache:
 install:
   stage: install
   script:
+    - rm -rf node_modules/
     - npm install
 
 build:
