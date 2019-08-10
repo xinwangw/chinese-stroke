@@ -5,7 +5,6 @@ import { StyledPinyin } from './styled';
 
 const Pinyin = function Pinyin(props) {
   const { lineColor, character, show } = props;
-  console.log('show', show);
   const p = show ? pinyin(character) : '';
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" x="10">
