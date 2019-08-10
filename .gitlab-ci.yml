@@ -14,7 +14,7 @@ install:
   stage: install
   script:
     - rm -rf node_modules/
-    - ls
+    - apt-get install autoconf
     - npm install
 
 build:
