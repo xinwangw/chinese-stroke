@@ -21,6 +21,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
   >
     Play All
   </button>
+  <button
+    class="styledButton__StyledButton-estgcy-0 dRkKdJ"
+  >
+    Stop All
+  </button>
   <div
     class="colorSelector__ColorSelectorWrapper-m67bks-1 hxeibA"
   >
