@@ -11,18 +11,29 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
     class="page__Input-sc-1azcnwm-1 eFljxR"
     value=""
   />
+  <label
+    class="HomePage__Checkbox-i81cdn-0 dFXyQB"
+  >
+    <input
+      type="checkbox"
+    />
+    <span>
+      Show Pinyin
+    </span>
+  </label>
+  <br />
   <button
-    class="styledButton__StyledButton-estgcy-0 dRkKdJ"
+    class="styledButton__StyledButton-estgcy-0 giYiqe"
   >
     OK
   </button>
   <button
-    class="styledButton__StyledButton-estgcy-0 dRkKdJ"
+    class="styledButton__StyledButton-estgcy-0 giYiqe"
   >
     Play All
   </button>
   <button
-    class="styledButton__StyledButton-estgcy-0 dRkKdJ"
+    class="styledButton__StyledButton-estgcy-0 giYiqe"
   >
     Stop All
   </button>
