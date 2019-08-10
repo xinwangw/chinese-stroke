@@ -1,4 +1,4 @@
-image: xinwangw/node-web-ci:1.0.1
+image: xinwangw/node-web-ci:1.0.2
 
 stages:
   - install
